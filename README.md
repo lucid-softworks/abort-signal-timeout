@@ -6,5 +6,6 @@ Create a signal that aborts asynchronously after a non-negative deadline with a
 ```ts
 import { timeoutSignal } from "@lucid-softworks/abort-signal-timeout";
 
-await fetch(url, { signal: timeoutSignal(2_000) });
+const signal = timeoutSignal(2_000);
+await fetch("https://example.com", { signal });
 ```
